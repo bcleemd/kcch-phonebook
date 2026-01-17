@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const resultsList = document.getElementById('resultsList');
+    const searchBar = document.getElementById('searchBar');
+    const editBtn = document.getElementById('editBtn');
+    const editActions = document.getElementById('editActions');
+    const tableView = document.getElementById('tableView');
+    const tableBody = document.getElementById('tableBody');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const saveBtn = document.getElementById('saveBtn');
+
     let phoneData = [];
+    let isEditMode = false;
 
     // CSV 파일 로드 및 파싱
     async function loadPhoneBook() {
@@ -20,13 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function parseCSV(text) {
-        // 줄바꿈으로 분리
         const lines = text.split(/\r?\n/);
-        // 헤더 제외하고 데이터 추출 (장소, 내선번호)
         phoneData = lines.slice(1)
             .filter(line => line.trim() !== '')
             .map(line => {
-                // 단순 쉼표 분리 (데이터에 쉼표가 있을 경우를 고려하여 정규식 사용 가능하지만, 현재 데이터는 단순함)
                 const parts = line.split(',');
                 return {
                     place: parts[0]?.trim() || '',
@@ -37,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayResults(results) {
         resultsList.innerHTML = '';
-        
+
         if (results.length === 0) {
             resultsList.innerHTML = '<div class="no-results">검색 결과가 없습니다.</div>';
             return;
@@ -46,34 +52,130 @@ document.addEventListener('DOMContentLoaded', () => {
         results.forEach(item => {
             const card = document.createElement('div');
             card.className = 'card';
-            
+
             card.innerHTML = `
                 <div class="card-info">
                     <span class="card-place">${item.place}</span>
                 </div>
                 <div class="card-number">${item.number}</div>
             `;
-            
+
             resultsList.appendChild(card);
         });
     }
 
-    // 검색 핸들러
+    // --- Edit Mode Logic ---
+
+    function toggleEditMode() {
+        isEditMode = !isEditMode;
+
+        if (isEditMode) {
+            searchBar.classList.add('hidden');
+            resultsList.classList.add('hidden');
+            editActions.classList.remove('hidden');
+            tableView.classList.remove('hidden');
+            editBtn.classList.add('hidden');
+            renderTable();
+        } else {
+            searchBar.classList.remove('hidden');
+            resultsList.classList.remove('hidden');
+            editActions.classList.add('hidden');
+            tableView.classList.add('hidden');
+            editBtn.classList.remove('hidden');
+            displayResults(phoneData);
+        }
+    }
+
+    function renderTable() {
+        tableBody.innerHTML = '';
+
+        phoneData.forEach((item, index) => {
+            addRowToTable(item.place, item.number, index);
+        });
+
+        // 빈 행 추가 (새 데이터 입력용)
+        addRowToTable('', '', phoneData.length);
+    }
+
+    function addRowToTable(place, number, index) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td contenteditable="true" class="cell-place">${place}</td>
+            <td contenteditable="true" class="cell-number">${number}</td>
+            <td class="col-action">
+                ${index < phoneData.length ? `<button class="delete-btn" data-index="${index}">&times;</button>` : ''}
+            </td>
+        `;
+
+        // 삭제 이벤트
+        const deleteBtn = tr.querySelector('.delete-btn');
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', () => {
+                phoneData.splice(index, 1);
+                renderTable();
+            });
+        }
+
+        // 편집 완료 시 데이터 업데이트
+        const cells = tr.querySelectorAll('td[contenteditable="true"]');
+        cells.forEach(cell => {
+            cell.addEventListener('blur', () => {
+                const updatedPlace = tr.querySelector('.cell-place').innerText.trim();
+                const updatedNumber = tr.querySelector('.cell-number').innerText.trim();
+
+                if (index < phoneData.length) {
+                    // 기존 행 업데이트
+                    phoneData[index] = { place: updatedPlace, number: updatedNumber };
+                } else if (updatedPlace || updatedNumber) {
+                    // 새 행 추가
+                    phoneData.push({ place: updatedPlace, number: updatedNumber });
+                    renderTable();
+                }
+            });
+        });
+
+        tableBody.appendChild(tr);
+    }
+
+    function saveToCSV() {
+        const header = "장소,내선번호\n";
+        const csvContent = phoneData
+            .map(item => `${item.place},${item.number}`)
+            .join('\n');
+
+        const fullContent = header + csvContent;
+        const blob = new Blob(["\ufeff" + fullContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", "PhoneBook.csv");
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        toggleEditMode();
+    }
+
+    // --- Event Listeners ---
+
     searchInput.addEventListener('input', (e) => {
         const searchTerm = e.target.value.toLowerCase().trim();
-        
         if (searchTerm === '') {
             displayResults(phoneData);
             return;
         }
-
-        const filtered = phoneData.filter(item => 
-            item.place.toLowerCase().includes(searchTerm) || 
+        const filtered = phoneData.filter(item =>
+            item.place.toLowerCase().includes(searchTerm) ||
             item.number.toLowerCase().includes(searchTerm)
         );
-        
         displayResults(filtered);
     });
+
+    editBtn.addEventListener('click', toggleEditMode);
+    cancelBtn.addEventListener('click', toggleEditMode);
+    saveBtn.addEventListener('click', saveToCSV);
 
     // 초기 데이터 로드
     loadPhoneBook();
