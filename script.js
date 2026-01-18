@@ -52,16 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
         results.forEach(item => {
             const card = document.createElement('div');
             card.className = 'card';
+            // Final resort: Inline styles for horizontal alignment
+            Object.assign(card.style, {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%'
+            });
 
             card.innerHTML = `
-                <div class="card-info">
-                    <span class="card-place">${item.place}</span>
+                <div class="card-info" style="display: flex; flex-direction: row; flex: 1; align-items: center; min-width: 0;">
+                    <div class="card-place" style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.place}</div>
                 </div>
-                <div class="card-number">${item.number}</div>
+                <div class="card-number" style="font-weight: 700; color: #3b82f6; margin-left: 20px; white-space: nowrap; flex-shrink: 0;">${item.number}</div>
             `;
 
             resultsList.appendChild(card);
         });
+        console.log('Phonbook: Displayed ' + results.length + ' results with class search-item-row');
     }
 
     // --- Edit Mode Logic ---
