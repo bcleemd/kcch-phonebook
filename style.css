@@ -94,118 +94,9 @@ body {
     transform: translateY(-1px);
 }
 
-.btn-secondary {
-    background: #fff;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-}
 
-.btn-secondary:hover {
-    background: #eff6ff;
-}
 
-.btn-outline {
-    background: transparent;
-    border: 1px solid var(--text-muted);
-    color: var(--text-muted);
-}
 
-.btn-outline:hover {
-    background: #f1f5f9;
-}
-
-#editBtn {
-    position: absolute;
-    right: 0;
-}
-
-/* Edit Actions */
-.edit-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.edit-hint {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.action-buttons {
-    display: flex;
-    gap: 0.5rem;
-}
-
-/* Table View Styles */
-.table-view {
-    width: 100%;
-    background: var(--card-bg);
-    border-radius: 1rem;
-    overflow-x: auto;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-}
-
-th,
-td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-th {
-    background: #f8fafc;
-    font-weight: 700;
-    color: var(--text-muted);
-    position: sticky;
-    top: 0;
-}
-
-td[contenteditable="true"] {
-    background: #fff;
-    cursor: text;
-    outline: none;
-    transition: background 0.2s ease;
-}
-
-td[contenteditable="true"]:focus {
-    background: #eff6ff;
-    box-shadow: inset 0 0 0 2px var(--primary-color);
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-.col-action {
-    width: 40px;
-}
-
-.delete-btn {
-    background: none;
-    border: none;
-    color: #ef4444;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-}
-
-.delete-btn:hover {
-    opacity: 1;
-}
 
 /* Card Styles (Search Results) */
 .card {
@@ -308,8 +199,4 @@ tr:last-child td {
         padding: 1rem;
     }
 
-    #editBtn {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
-    }
 }

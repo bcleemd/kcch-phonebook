@@ -1,16 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const resultsList = document.getElementById('resultsList');
-    const searchBar = document.getElementById('searchBar');
-    const editBtn = document.getElementById('editBtn');
-    const editActions = document.getElementById('editActions');
-    const tableView = document.getElementById('tableView');
-    const tableBody = document.getElementById('tableBody');
-    const cancelBtn = document.getElementById('cancelBtn');
-    const saveBtn = document.getElementById('saveBtn');
-
     let phoneData = [];
-    let isEditMode = false;
 
     // CSV 파일 로드 및 파싱
     async function loadPhoneBook() {
@@ -73,99 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Phonbook: Displayed ' + results.length + ' results with class search-item-row');
     }
 
-    // --- Edit Mode Logic ---
-
-    function toggleEditMode() {
-        isEditMode = !isEditMode;
-
-        if (isEditMode) {
-            searchBar.classList.add('hidden');
-            resultsList.classList.add('hidden');
-            editActions.classList.remove('hidden');
-            tableView.classList.remove('hidden');
-            editBtn.classList.add('hidden');
-            renderTable();
-        } else {
-            searchBar.classList.remove('hidden');
-            resultsList.classList.remove('hidden');
-            editActions.classList.add('hidden');
-            tableView.classList.add('hidden');
-            editBtn.classList.remove('hidden');
-            displayResults(phoneData);
-        }
-    }
-
-    function renderTable() {
-        tableBody.innerHTML = '';
-
-        phoneData.forEach((item, index) => {
-            addRowToTable(item.place, item.number, index);
-        });
-
-        // 빈 행 추가 (새 데이터 입력용)
-        addRowToTable('', '', phoneData.length);
-    }
-
-    function addRowToTable(place, number, index) {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td contenteditable="true" class="cell-place">${place}</td>
-            <td contenteditable="true" class="cell-number">${number}</td>
-            <td class="col-action">
-                ${index < phoneData.length ? `<button class="delete-btn" data-index="${index}">&times;</button>` : ''}
-            </td>
-        `;
-
-        // 삭제 이벤트
-        const deleteBtn = tr.querySelector('.delete-btn');
-        if (deleteBtn) {
-            deleteBtn.addEventListener('click', () => {
-                phoneData.splice(index, 1);
-                renderTable();
-            });
-        }
-
-        // 편집 완료 시 데이터 업데이트
-        const cells = tr.querySelectorAll('td[contenteditable="true"]');
-        cells.forEach(cell => {
-            cell.addEventListener('blur', () => {
-                const updatedPlace = tr.querySelector('.cell-place').innerText.trim();
-                const updatedNumber = tr.querySelector('.cell-number').innerText.trim();
-
-                if (index < phoneData.length) {
-                    // 기존 행 업데이트
-                    phoneData[index] = { place: updatedPlace, number: updatedNumber };
-                } else if (updatedPlace || updatedNumber) {
-                    // 새 행 추가
-                    phoneData.push({ place: updatedPlace, number: updatedNumber });
-                    renderTable();
-                }
-            });
-        });
-
-        tableBody.appendChild(tr);
-    }
-
-    function saveToCSV() {
-        const header = "장소,내선번호\n";
-        const csvContent = phoneData
-            .map(item => `${item.place},${item.number}`)
-            .join('\n');
-
-        const fullContent = header + csvContent;
-        const blob = new Blob(["\ufeff" + fullContent], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-
-        const link = document.createElement("a");
-        link.setAttribute("href", url);
-        link.setAttribute("download", "PhoneBook.csv");
-        link.style.visibility = 'hidden';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        toggleEditMode();
-    }
 
     // --- Event Listeners ---
 
@@ -182,9 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayResults(filtered);
     });
 
-    editBtn.addEventListener('click', toggleEditMode);
-    cancelBtn.addEventListener('click', toggleEditMode);
-    saveBtn.addEventListener('click', saveToCSV);
 
     // 초기 데이터 로드
     loadPhoneBook();
