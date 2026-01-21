@@ -106,7 +106,7 @@ body {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     gap: 1.5rem;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
@@ -127,7 +127,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 }
 
@@ -150,6 +150,7 @@ body {
     flex-shrink: 0;
     text-align: right;
     margin-left: 1rem;
+    line-height: 1.4;
 }
 
 /* search-item-row Styles (Search Results Fix) */
@@ -160,7 +161,7 @@ body {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     gap: 1.5rem;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
