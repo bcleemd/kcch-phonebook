@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCCH PhoneBook</title>
+    <meta name="description" content="원자력병원 내선번호 검색 서비스 - 신속하고 정확하게 내선번호를 찾아보세요.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=fresh_v12">
+    <style>
+        /* ULTIMATE PRIORITY: Force Horizontal Layout */
+        .card {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: flex-start !important;
+            width: 100% !important;
+            padding: 16px 20px !important;
+            margin-bottom: 12px !important;
+            background: white !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+            border: 1px solid #e2e8f0 !important;
+        }
+
+        .card-info {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            flex: 1 !important;
+            min-width: 0 !important;
+        }
+
+        .card-place {
+            font-weight: 600 !important;
+            color: #1e293b !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            margin-right: 20px !important;
+        }
+
+        .card-number {
+            font-weight: 700 !important;
+            color: #3b82f6 !important;
+            margin-left: auto !important;
+            flex-shrink: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="header-top">
+                <h1 class="title">KCCH PhoneBook</h1>
+            </div>
+            <div id="searchBar" class="search-container">
+                <input type="text" id="searchInput" placeholder="장소 또는 이름으로 검색하세요..." autofocus>
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <div id="resultsList" class="results-list">
+                <!-- 결과가 여기에 동적으로 추가됩니다 -->
+                <div class="loading">데이터를 불러오는 중...</div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 KCCH PhoneBook. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js?v=fresh_v1"></script>
+</body>
+
+</html>
