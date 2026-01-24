@@ -1,0 +1,518 @@
+{
+    "hospital_staff_directory": {
+        "source": "2026년 1월 외래진료일정표 및 2025년 1월 병원전화번호부",
+        "total_count": 87,
+        "staff_list": [
+            {
+                "name": "김진",
+                "department": "소화기내과",
+                "note": ""
+            },
+            {
+                "name": "박수철",
+                "department": "소화기내과",
+                "note": ""
+            },
+            {
+                "name": "김슬지",
+                "department": "소화기내과",
+                "note": ""
+            },
+            {
+                "name": "김연주",
+                "department": "소화기내과",
+                "note": ""
+            },
+            {
+                "name": "신수영",
+                "department": "소화기내과",
+                "note": "전임의"
+            },
+            {
+                "name": "김태수",
+                "department": "소화기내과",
+                "note": "전임의"
+            },
+            {
+                "name": "한철주",
+                "department": "소화기내과",
+                "note": ""
+            },
+            {
+                "name": "김철현",
+                "department": "호흡기내과",
+                "note": ""
+            },
+            {
+                "name": "김서윤",
+                "department": "호흡기내과",
+                "note": ""
+            },
+            {
+                "name": "김혜련",
+                "department": "호흡기내과",
+                "note": ""
+            },
+            {
+                "name": "임다은",
+                "department": "내분비내과",
+                "note": ""
+            },
+            {
+                "name": "구윤희",
+                "department": "내분비내과",
+                "note": ""
+            },
+            {
+                "name": "김홍일",
+                "department": "내분비내과",
+                "note": "해외파견(2025.3.31-2026.4.2)"
+            },
+            {
+                "name": "문미길",
+                "department": "심장내과",
+                "note": ""
+            },
+            {
+                "name": "남현석",
+                "department": "심장내과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "정명아",
+                "department": "신장내과",
+                "note": ""
+            },
+            {
+                "name": "서현정",
+                "department": "감염내과",
+                "note": ""
+            },
+            {
+                "name": "이은영",
+                "department": "류마티스내과",
+                "note": ""
+            },
+            {
+                "name": "장윤정",
+                "department": "혈액종양내과",
+                "note": ""
+            },
+            {
+                "name": "이효락",
+                "department": "혈액종양내과",
+                "note": ""
+            },
+            {
+                "name": "나임일",
+                "department": "혈액종양내과",
+                "note": ""
+            },
+            {
+                "name": "강혜진",
+                "department": "혈액종양내과",
+                "note": ""
+            },
+            {
+                "name": "양성현",
+                "department": "혈액종양내과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "최두환",
+                "department": "일반내과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "김영한",
+                "department": "일반내과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "유지영",
+                "department": "일반내과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "박동희",
+                "department": "일반내과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "조응호",
+                "department": "외과",
+                "note": ""
+            },
+            {
+                "name": "진성호",
+                "department": "외과",
+                "note": ""
+            },
+            {
+                "name": "신의섭",
+                "department": "외과",
+                "note": ""
+            },
+            {
+                "name": "김상범",
+                "department": "외과",
+                "note": ""
+            },
+            {
+                "name": "문선미",
+                "department": "외과",
+                "note": ""
+            },
+            {
+                "name": "유항종",
+                "department": "외과",
+                "note": "소화기내과 및 외과 진료 병행"
+            },
+            {
+                "name": "조상식",
+                "department": "외과",
+                "note": "해외파견(2026.1.1-2027.1.14)"
+            },
+            {
+                "name": "채성돈",
+                "department": "외과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "김현아",
+                "department": "유방암센터(외과)",
+                "note": ""
+            },
+            {
+                "name": "한이레",
+                "department": "유방암센터(외과)",
+                "note": ""
+            },
+            {
+                "name": "성민기",
+                "department": "유방암센터(외과)",
+                "note": ""
+            },
+            {
+                "name": "박찬섭",
+                "department": "유방암센터(외과)",
+                "note": ""
+            },
+            {
+                "name": "유상영",
+                "department": "산부인과",
+                "note": ""
+            },
+            {
+                "name": "강지식",
+                "department": "산부인과",
+                "note": ""
+            },
+            {
+                "name": "김법종",
+                "department": "산부인과",
+                "note": ""
+            },
+            {
+                "name": "정희정",
+                "department": "산부인과",
+                "note": ""
+            },
+            {
+                "name": "김문홍",
+                "department": "산부인과",
+                "note": "파견(2026.1.1-2026.3.31)"
+            },
+            {
+                "name": "김건하",
+                "department": "소아청소년과",
+                "note": "수면클리닉, 의과학실증센터장"
+            },
+            {
+                "name": "김동호",
+                "department": "소아청소년과",
+                "note": "병원장"
+            },
+            {
+                "name": "임중섭",
+                "department": "소아청소년과",
+                "note": ""
+            },
+            {
+                "name": "장지혜",
+                "department": "소아청소년과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "조문기",
+                "department": "비뇨의학과",
+                "note": ""
+            },
+            {
+                "name": "박종욱",
+                "department": "비뇨의학과",
+                "note": ""
+            },
+            {
+                "name": "송강현",
+                "department": "비뇨의학과",
+                "note": ""
+            },
+            {
+                "name": "이병철",
+                "department": "이비인후과",
+                "note": ""
+            },
+            {
+                "name": "이명철",
+                "department": "이비인후과",
+                "note": ""
+            },
+            {
+                "name": "최익준",
+                "department": "이비인후과",
+                "note": ""
+            },
+            {
+                "name": "안정민",
+                "department": "이비인후과",
+                "note": ""
+            },
+            {
+                "name": "조완형",
+                "department": "정형외과",
+                "note": ""
+            },
+            {
+                "name": "송원석",
+                "department": "정형외과",
+                "note": ""
+            },
+            {
+                "name": "공창배",
+                "department": "정형외과",
+                "note": ""
+            },
+            {
+                "name": "조상현",
+                "department": "정형외과",
+                "note": "건강증진센터장"
+            },
+            {
+                "name": "장웅규",
+                "department": "신경외과",
+                "note": ""
+            },
+            {
+                "name": "윤상민",
+                "department": "신경외과",
+                "note": ""
+            },
+            {
+                "name": "이지희",
+                "department": "신경외과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "박수연",
+                "department": "신경과",
+                "note": ""
+            },
+            {
+                "name": "하정호",
+                "department": "신경과",
+                "note": ""
+            },
+            {
+                "name": "조현준",
+                "department": "뇌혈관센터",
+                "note": ""
+            },
+            {
+                "name": "유진혁",
+                "department": "뇌혈관센터",
+                "note": ""
+            },
+            {
+                "name": "이해원",
+                "department": "심장혈관흉부외과",
+                "note": "기흉센터"
+            },
+            {
+                "name": "권예리",
+                "department": "심장혈관흉부외과",
+                "note": "기흉센터"
+            },
+            {
+                "name": "강도균",
+                "department": "심장혈관흉부외과",
+                "note": "기흉센터"
+            },
+            {
+                "name": "유인정",
+                "department": "안과",
+                "note": "해외파견(2026.1.12-2027.1.11)"
+            },
+            {
+                "name": "주소연",
+                "department": "정신건강의학과",
+                "note": ""
+            },
+            {
+                "name": "조성진",
+                "department": "정신건강의학과",
+                "note": ""
+            },
+            {
+                "name": "이청",
+                "department": "통증클리닉",
+                "note": ""
+            },
+            {
+                "name": "민두재",
+                "department": "통증클리닉",
+                "note": ""
+            },
+            {
+                "name": "김영화",
+                "department": "마취통증의학과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "김수정",
+                "department": "마취통증의학과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "이진경",
+                "department": "유전암상담클리닉",
+                "note": "의학원장"
+            },
+            {
+                "name": "이민기",
+                "department": "치과",
+                "note": ""
+            },
+            {
+                "name": "이정원",
+                "department": "치과",
+                "note": "해외파견(2025.11.1-2026.10.31)"
+            },
+            {
+                "name": "임경진",
+                "department": "피부과",
+                "note": ""
+            },
+            {
+                "name": "이범훈",
+                "department": "피부과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "고영진",
+                "department": "가정의학과",
+                "note": ""
+            },
+            {
+                "name": "김경진",
+                "department": "가정의학과",
+                "note": ""
+            },
+            {
+                "name": "오애진",
+                "department": "가정의학과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "백은경",
+                "department": "방사선종양학과",
+                "note": ""
+            },
+            {
+                "name": "장원일",
+                "department": "방사선종양학과",
+                "note": ""
+            },
+            {
+                "name": "김미숙",
+                "department": "방사선종양학과",
+                "note": ""
+            },
+            {
+                "name": "유형준",
+                "department": "방사선종양학과",
+                "note": ""
+            },
+            {
+                "name": "양광모",
+                "department": "방사선종양학과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "임일한",
+                "department": "핵의학과",
+                "note": ""
+            },
+            {
+                "name": "변병현",
+                "department": "핵의학과",
+                "note": ""
+            },
+            {
+                "name": "김병일",
+                "department": "핵의학과",
+                "note": ""
+            },
+            {
+                "name": "이인기",
+                "department": "핵의학과",
+                "note": ""
+            },
+            {
+                "name": "최창운",
+                "department": "핵의학과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "이태걸",
+                "department": "진단검사의학과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "고재수",
+                "department": "영상의학과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "이승숙",
+                "department": "병리과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "김기환",
+                "department": "병리과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "박선후",
+                "department": "병리과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "설혜실",
+                "department": "병리과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "공준석",
+                "department": "병리과",
+                "note": "전화번호부 등재"
+            },
+            {
+                "name": "홍영준",
+                "department": "병리과",
+                "note": "전화번호부 등재"
+            }
+        ]
+    }
+}

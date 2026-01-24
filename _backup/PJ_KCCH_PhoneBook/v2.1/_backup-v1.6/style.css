@@ -52,10 +52,9 @@ body {
 
 .header-top {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     margin-bottom: 1.5rem;
     position: relative;
 }
@@ -69,13 +68,6 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.025em;
-}
-
-.subtitle {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    opacity: 0.9;
 }
 
 /* Button Styles */
