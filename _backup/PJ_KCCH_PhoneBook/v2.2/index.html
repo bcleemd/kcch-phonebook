@@ -12,6 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=fresh_v12">
     <style>
+        .header-top {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+        }
+
+        .subtitle {
+            margin-top: 8px !important;
+            font-size: 0.9rem !important;
+            color: #64748b !important;
+            max-width: 90%;
+            line-height: 1.4;
+        }
+
         /* ULTIMATE PRIORITY: Force Horizontal Layout */
         .card {
             display: flex !important;
@@ -58,6 +74,7 @@
         <header class="header">
             <div class="header-top">
                 <h1 class="title">KCCH PhoneBook</h1>
+                <p class="subtitle">오류가 발견되면, 이비인후과 이병철에게 카톡 또는 문자 남겨주세요</p>
             </div>
             <div id="searchBar" class="search-container">
                 <input type="text" id="searchInput" placeholder="장소 또는 이름으로 검색하세요..." autofocus>
