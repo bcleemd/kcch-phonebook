@@ -47,8 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         });
 
+                        let displayPlace = '';
+                        if (uniquePath.length >= 2) {
+                            const last = uniquePath[uniquePath.length - 1];
+                            const secondLast = uniquePath[uniquePath.length - 2];
+                            displayPlace = `${last} - ${secondLast}`;
+                        } else if (uniquePath.length === 1) {
+                            displayPlace = uniquePath[0];
+                        }
+
                         results.push({
-                            place: uniquePath.join(' ').trim(),
+                            place: displayPlace.trim(),
+                            searchPath: uniquePath.join(' ').toLowerCase(),
                             number: numbers.join(' / ')
                         });
                     }
@@ -117,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const filtered = phoneData.filter(item =>
-            item.place.toLowerCase().includes(searchTerm) ||
+            item.searchPath.includes(searchTerm) ||
             item.number.toLowerCase().includes(searchTerm)
         );
         displayResults(filtered);
