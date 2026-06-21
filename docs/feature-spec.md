@@ -38,11 +38,10 @@
   * 이때, 로컬 뷰어와 배포용 뷰어가 동일하게 최신 상태를 유지할 수 있도록 **프로젝트 루트**와 **`web_home/` 하위 디렉토리** 두 곳에 이중으로 저장합니다.
 * **Git 배포 API (`POST /api/deploy`)**:
   * 클라이언트로부터 커밋 메시지를 수신합니다.
-  * 로컬 환경에 설치된 `git` 명령어 및 `gh` 로그인 자격 증명을 이용해 다음 순서의 명령을 수행합니다:
-    1. 뷰어 동작 관련 핵심 정적 파일 스테이징 (`git add`)
-       * 대상: `PhoneBook.json`, `index.html`, `style.css`, `script.js` (루트 및 `web_home/` 내부 동일 파일 전원)
-    2. 로컬 커밋 생성 (`git commit -m "[메시지]"`)
-    3. 원격 저장소 푸시 (`git push origin main`)
+  * 로컬 컴퓨터에 로그인된 `gh` CLI 세션을 활용하여 GitHub API (`PUT`) 요청을 직접 전송합니다:
+    1. 원격 저장소(`bcleemd/kcch-phonebook`)의 기존 `PhoneBook.json` 파일의 **SHA 값**을 동적으로 획득합니다.
+    2. 로컬 `PhoneBook.json` 내용을 Base64 형식으로 인코딩합니다.
+    3. `gh api --method PUT`를 실행하여 원격 파일만 직접 업데이트합니다. (이 방식은 로컬에 `.git` 폴더가 없는 환경에서도 정상 동작합니다.)
 
 ### B. 시각적 웹 에디터 UI (`editor_home/index.html`)
 사용자가 JSON의 텍스트 형식 데이터를 복잡하게 조작할 필요가 없도록 해주는 웹 프론트엔드 작업 영역입니다.
